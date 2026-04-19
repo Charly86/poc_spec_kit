@@ -28,6 +28,10 @@
 
 **Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
 
+**API Test**: [Describe the HTTP request(s), status code(s), and response data that prove this story]
+
+**Web UI Test**: [Describe the browser interaction that proves the same story through the frontend]
+
 **Acceptance Scenarios**:
 
 1. **Given** [initial state], **When** [action], **Then** [expected outcome]
@@ -43,6 +47,10 @@
 
 **Independent Test**: [Describe how this can be tested independently]
 
+**API Test**: [Describe the HTTP request(s), status code(s), and response data that prove this story]
+
+**Web UI Test**: [Describe the browser interaction that proves the same story through the frontend]
+
 **Acceptance Scenarios**:
 
 1. **Given** [initial state], **When** [action], **Then** [expected outcome]
@@ -56,6 +64,10 @@
 **Why this priority**: [Explain the value and why it has this priority level]
 
 **Independent Test**: [Describe how this can be tested independently]
+
+**API Test**: [Describe the HTTP request(s), status code(s), and response data that prove this story]
+
+**Web UI Test**: [Describe the browser interaction that proves the same story through the frontend]
 
 **Acceptance Scenarios**:
 
@@ -84,16 +96,16 @@
 
 ### Functional Requirements
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **FR-001**: System MUST [specific task-list capability, e.g., "create a task with a title"]
+- **FR-002**: System MUST [specific task-list capability, e.g., "list existing tasks"]
+- **FR-003**: Users MUST be able to [key interaction, e.g., "view task detail"]
+- **FR-004**: System MUST [data requirement, e.g., "persist tasks in local storage"]
+- **FR-005**: System MUST [behavior, e.g., "return clear validation errors for invalid task input"]
 
 *Example of marking unclear requirements:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **FR-006**: System MUST store tasks using [NEEDS CLARIFICATION: local persistence method not specified - file, embedded database, in-memory for demo?]
+- **FR-007**: System MUST expose the frontend API base URL via [NEEDS CLARIFICATION: local configuration not specified]
 
 ### Key Entities *(include if feature involves data)*
 
@@ -123,6 +135,6 @@
 -->
 
 - [Assumption about target users, e.g., "Users have stable internet connectivity"]
-- [Assumption about scope boundaries, e.g., "Mobile support is out of scope for v1"]
-- [Assumption about data/environment, e.g., "Existing authentication system will be reused"]
-- [Dependency on existing system/service, e.g., "Requires access to the existing user profile API"]
+- [Assumption about scope boundaries, e.g., "Mobile support is out of scope for the POC"]
+- [Assumption about data/environment, e.g., "No users or authentication are required"]
+- [Dependency on existing system/service, e.g., "No external service is required for local persistence"]
