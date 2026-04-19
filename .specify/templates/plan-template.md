@@ -31,7 +31,18 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- **POC Simplicity**: Scope is limited to task-list CRUD; extra dependencies,
+  production architecture, or non-local services are justified in Complexity Tracking.
+- **Incremental Delivery**: P1 demonstrates create and list tasks before detail,
+  update, complete, or delete stories are planned as later increments.
+- **Backend/Frontend Separation**: Plan uses separate `backend/` and `frontend/`
+  folders, with communication only through documented HTTP contracts.
+- **REST Backend Stack**: Backend uses Spring Boot, Java, Maven, REST resources,
+  and basic local persistence. No users, roles, sessions, or authentication.
+- **Light Frontend Stack**: Frontend uses Vite with HTML, CSS, and JavaScript,
+  without a heavy frontend framework unless explicitly justified.
+- **Dual Verification**: Every story has an API HTTP verification path and an
+  equivalent web UI verification path.
 
 ## Project Structure
 
@@ -68,20 +79,19 @@ tests/
 ├── integration/
 └── unit/
 
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
+# [REMOVE IF UNUSED] Option 2: Web application (required for this constitution)
 backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
++-- pom.xml
++-- src/main/java/
++-- src/main/resources/
++-- src/test/java/
 
 frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
++-- package.json
++-- index.html
++-- src/
+    +-- main.js
+    +-- styles.css
 
 # [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
 api/
