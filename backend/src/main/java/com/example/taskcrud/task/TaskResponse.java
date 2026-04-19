@@ -1,0 +1,21 @@
+package com.example.taskcrud.task;
+
+import java.time.Instant;
+
+public record TaskResponse(
+        Long id,
+        String title,
+        String description,
+        TaskStatus status,
+        Instant createdAt
+) {
+    static TaskResponse from(Task task) {
+        return new TaskResponse(
+                task.getId(),
+                task.getTitle(),
+                task.getDescription(),
+                task.getStatus(),
+                task.getCreatedAt()
+        );
+    }
+}
